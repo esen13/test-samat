@@ -2,8 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50007459-54c0-4598-93ae-d7661658aa4b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Logout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/OptionItem.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FetchTransaction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FetchTransaction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TopBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TopBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/authentication/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/authentication/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/routers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/routers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/transaction/CreateTransaction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/transaction/CreateTransaction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/transactionsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/transactionsReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/types.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +73,8 @@
       <updated>1585323889726</updated>
       <workItem from="1585323891177" duration="5451000" />
       <workItem from="1585375246776" duration="32037000" />
-      <workItem from="1585473380165" duration="9140000" />
+      <workItem from="1585473380165" duration="9536000" />
+      <workItem from="1585486183190" duration="9889000" />
     </task>
     <servers />
   </component>
@@ -84,9 +95,17 @@
     </state>
     <state x="100" y="79" width="1480" height="870" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1585403236276" />
     <state x="100" y="79" width="1480" height="870" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1585419581220" />
+    <state x="498" y="282" width="683" height="486" key="find.popup" timestamp="1585499274907">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="498" y="282" width="683" height="486" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1585499274907" />
     <state x="583" y="432" key="git4idea.ui.GitStashDialog" timestamp="1585482521002">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="583" y="432" key="git4idea.ui.GitStashDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1585482521002" />
+    <state x="505" y="248" width="670" height="675" key="run.anything.popup" timestamp="1585495628059">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="505" y="248" width="670" height="675" key="run.anything.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1585495628059" />
   </component>
 </project>

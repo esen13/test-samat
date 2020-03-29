@@ -6,9 +6,9 @@ import {
     HIDE_LOADER,
     REMOVE_TRANSACTION,
     SHOW_ALERT,
-    SHOW_LOADER
+    SHOW_LOADER,
+    FETCH_BANK_LIST
 } from "./types";
-
 const url = process.env.REACT_APP_DB_URL;
 
 export function createTransaction (transaction) {
@@ -78,7 +78,29 @@ export function loadFetchTransactions() {
         try {
             dispatch(showLoader());
             const res = await axios.get(`${url}/transactions.json`);
-            console.log(res, 'resGET');
+            const payload = Object.keys(res.data || []).map(key => {
+                return {
+                    ...res.data[key],
+                    id: key
+                }
+            });
+            dispatch({
+                type: FETCH_TRANSACTION,
+                payload
+            });
+            dispatch(hideLoader());
+        } catch (e) {
+            dispatch(showAlert('Что то пошло не так c server api','danger'));
+            dispatch(hideLoader())
+        }
+    }
+}
+
+export function loadFetchBankList() {
+    return async dispatch => {
+        try {
+            dispatch(showLoader());
+            const res = await axios.get(`${url}/notes.json`);
             const payload = Object.keys(res.data || []).map(key => {
                 return {
                     ...res.data[key],
@@ -87,7 +109,7 @@ export function loadFetchTransactions() {
             });
             console.log(payload, "payload");
             dispatch({
-                type: FETCH_TRANSACTION,
+                type: FETCH_BANK_LIST,
                 payload
             });
             dispatch(hideLoader());

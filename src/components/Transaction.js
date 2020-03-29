@@ -20,7 +20,6 @@ export const Transaction = ({transaction}) => {
 
     return (
         <tr>
-            <th scope="row">{transaction.id}</th>
             <td>{transaction.amount}</td>
             <td>Банк: {bankName}</td>
             <td>

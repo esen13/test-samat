@@ -17,7 +17,6 @@ const Authentication = ({showAlert, alert}) => {
         if (email.trim() && password.trim()) {
             setEmail('');
             setPassword('');
-            showAlert('Успешно залогинен', 'success');
             setisSuccessFullSubmit(true);
         } else {
             setTimeout(() => {

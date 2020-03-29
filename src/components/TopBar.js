@@ -17,9 +17,13 @@ export const TopBar = () => {
                     <li className="nav-item">
                         <NavLink className="nav-link" to="/create">Создать транзакцию</NavLink>
                     </li>
-                    <li className="nav-item">
+                    {!token ? (<li className="nav-item">
                         <NavLink className="nav-link" to="/login">Авторизация</NavLink>
-                    </li>
+                    </li>) : (
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to="/logout">Выйти</NavLink>
+                        </li>
+                    )}
                 </ul>
             </div>
         </nav>

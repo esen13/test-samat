@@ -1,7 +1,8 @@
-import {CREATE_TRANSACTION, FETCH_TRANSACTION, REMOVE_TRANSACTION} from "./types";
+import {CREATE_TRANSACTION, FETCH_BANK_LIST, FETCH_TRANSACTION, REMOVE_TRANSACTION} from "./types";
 
 const initialState = {
-    transactions: []
+    transactions: [],
+    bankList: []
 };
 
 export const transactionsReducer = (state = initialState, action) => {
@@ -15,6 +16,8 @@ export const transactionsReducer = (state = initialState, action) => {
                 ...state,
                 transactions: state.transactions.filter(transaction => transaction.id !== action.payload)
             };
+        case FETCH_BANK_LIST:
+            return { ...state, bankList: action.payload};
         default:
             return state;
     }

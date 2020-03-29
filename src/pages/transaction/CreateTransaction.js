@@ -1,14 +1,25 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {connect} from 'react-redux';
-import {Redirect} from "react-router-dom";
-import {addTransaction, showAlert} from "../../redux/actions";
+import {Link} from "react-router-dom";
+import {addTransaction, showAlert, loadFetchBankList} from "../../redux/actions";
 import {Alert} from "../../components/Alert";
 import useLocalStorage from "../../hooks/useLocalStorage";
+import {OptionItem} from "../../components/OptionItem";
 
-const CreateTransaction = ({showAlert, alert, addTransaction}) => {
+const CreateTransaction = ({showAlert, alert, addTransaction, bankLists, loadFetchBankList}) => {
 
     const [amount, setAmount] = useState('');
     const [bankId, setBankId] = useState('1');
+
+    const [token] = useLocalStorage('tokenId');
+
+    useEffect(() => {
+        if(!bankLists.length) {
+            loadFetchBankList();
+            console.log(bankLists, 'bankList')
+        }
+        // eslint-disable-next-line
+    }, []);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -29,6 +40,12 @@ const CreateTransaction = ({showAlert, alert, addTransaction}) => {
             }, 100);
         }
     };
+
+    if(!token) {
+        return <h5 className="text-center mt-5">Чтобы добавить транзакцию авторизуйтесь,<br/> <Link to={'/login'}> страница авторизации </Link> </h5>
+    }
+
+    const bankListsCard = bankLists.map(bankList => <OptionItem bankLists={bankList} key={bankList.id} />);
 
     return(
         <div className="create-transaction-page mt-5">
@@ -56,9 +73,7 @@ const CreateTransaction = ({showAlert, alert, addTransaction}) => {
                                     value={bankId}
                                     onChange={event => setBankId(event.target.value)}
                                 >
-                                    <option value="1">Бай тушум</option>
-                                    <option value="2">Оптима банк</option>
-                                    <option value="3">КИКБ</option>
+                                    {bankListsCard}
                                 </select>
                             </div>
                             <button
@@ -77,11 +92,13 @@ const CreateTransaction = ({showAlert, alert, addTransaction}) => {
 
 const mapDispatchToProps = {
     addTransaction,
-    showAlert
+    showAlert,
+    loadFetchBankList
 };
 
 const mapStateToProps = (state) => ({
-    alert: state.app.alert
+    alert: state.app.alert,
+    bankLists: state.transactions.bankList
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateTransaction);
