@@ -10,10 +10,6 @@ const CreateTransaction = ({showAlert, alert, addTransaction}) => {
     const [amount, setAmount] = useState('');
     const [bankId, setBankId] = useState('1');
 
-    const [token] = useLocalStorage('tokenId');
-
-
-
     const handleSubmit = (event) => {
         event.preventDefault();
 
@@ -33,10 +29,6 @@ const CreateTransaction = ({showAlert, alert, addTransaction}) => {
             }, 100);
         }
     };
-
-    if(!token) {
-        return <Redirect to={'/'}/>
-    }
 
     return(
         <div className="create-transaction-page mt-5">

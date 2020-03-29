@@ -10,7 +10,7 @@ export default () => {
         <Switch>
             <Route path="/" component={GlobalTable} exact />
             <Route path="/login" component={Authentication} />
-            {token && <Route path="/create" component={CreateTransaction} />}
+            <Route path="/create" component={CreateTransaction} />
         </Switch>
     )
 }
